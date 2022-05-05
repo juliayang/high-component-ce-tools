@@ -15,7 +15,7 @@ The notebook, `examples/bayesian_optimization-charge-assignments.ipynb`, shows h
 # Sparse Group Lasso
 The notebook, `examples/train-sparse-group-lasso.ipynb`, uses the feature matrix `data/fm.npy` and `data/e.npy` to do the regressing. SparseGroupLasso is used to enforce sparsity at the group-level (setting ECI to entire groups to 0), following the soft thresholding operator condition described by Simon, Friedman, Hastie, and Tibshirani 2011.
 
-If you use this pacakge, please cite: 
+If you use this package, please cite: 
 
 J. H. Yang, T. Chen, L. Barroso-Luque, Z. Jadidi, G. Ceder, submitted (2022). 
 
