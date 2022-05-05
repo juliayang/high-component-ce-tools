@@ -42,6 +42,7 @@ class SparseGroupLasso(object):
 
         :param groups: numpy array with length equal to no. of basis functions, and grouped by orbit number.
         :param lambd: amount of L1 mixing
+        :param coef_: initialize to zero
         :param alpha: penalty applied to both L1 and L2
         :param intercept: Pass in existing intercept
         """
@@ -75,8 +76,8 @@ class SparseGroupLasso(object):
                 self.lambd * alpha)
             if np.linalg.norm(S, ord=2) < cutoff * len(l) ** 0.5:  # SGL paper cutoff
                 coef = np.zeros(len(l))
-                l1 = 0  # zero out contribution to objective function
-                l2 = 0  # zero out contribution to objective function
+                l1 = 0  # l1 zeroed out the
+                l2 = 0  # zero out the group
             else:
                 # do the fitting with group k
                 fitElastic = ElasticNet(fit_intercept=False, alpha=alpha, selection='random',
@@ -100,6 +101,7 @@ class SparseGroupLasso(object):
         return self
 
     def predict(self, X):
+
         return np.dot(X, self.coef_.T)
 
     def evaluate(self, X, Y):
@@ -148,6 +150,7 @@ class SparseGroupLasso(object):
     def score(self, X, Y):
         y_pred = self.predict(X).T
         return np.sqrt(mean_squared_error(Y, y_pred))
+        return r2_score(Y, y_pred)
 
     def get_params(self, deep=False):
         return {'groups': self.groups,
