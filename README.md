@@ -17,6 +17,6 @@ The notebook, `examples/train-sparse-group-lasso.ipynb`, uses the feature matrix
 
 If you use this package, please cite: 
 
-J. H. Yang, T. Chen, L. Barroso-Luque, Z. Jadidi, G. Ceder, submitted (2022). 
+J. H. Yang, T. Chen, L. Barroso-Luque, Z. Jadidi, G. Ceder, npj Comput. Mater., 8, 133, (2022). 
 
 Please email juliayang [at] berkeley [dot] edu with any questions. 
